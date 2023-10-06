@@ -1,4 +1,5 @@
 import express, { Express, Request, Response , Application } from 'express'
+import firebaseAdmin, { db } from '@services/firebase'
 import dotenv from 'dotenv'
 
 dotenv.config()
