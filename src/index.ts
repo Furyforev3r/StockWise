@@ -7,8 +7,10 @@ dotenv.config()
 const app: Application = express()
 const port = process.env.PORT || 8000
 
+const products: FirebaseFirestore.CollectionReference<FirebaseFirestore.DocumentData> = db.collection("products")
+
 app.get('/', (req: Request, res: Response) => {
-  res.send('Welcome to Express & TypeScript Server')
+  res.send('Welcome to StockWise')
 })
 
 app.listen(port, () => {
