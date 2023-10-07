@@ -26,17 +26,19 @@ app.get('/get/:productName', async (req: Request, res: Response) => {
 })
 
 app.get('/register/:productName/:productPrice/:productAmount', async (req: Request, res: Response) => {
-  const reqParams = req.params
-  const getProducts = await products.doc(reqParams.productName).get().then((e) => {
-    if (e.exists) {
+  try {
+    const reqParams = req.params
+    const getProducts = await products.doc(reqParams.productName).get()
+    if (getProducts.exists) {
       res.status(200).json(getProducts)
     } else {
       products.doc(reqParams.productName).set({ price: Number(reqParams.productPrice), amount: Number(reqParams.productAmount) }).then((e) => {
         res.status(201).json(e)
       })
     }
-  })
-
+  } catch (error: any) {
+    res.status(400).json(error.message)
+  }
 })
 
 app.listen(port, () => {
