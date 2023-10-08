@@ -25,7 +25,7 @@ app.get('/get/:productName', async (req: Request, res: Response) => {
 
 })
 
-app.get('/register/:productName/:productPrice/:productAmount', async (req: Request, res: Response) => {
+app.post('/register/:productName/:productPrice/:productAmount', async (req: Request, res: Response) => {
   try {
     const reqParams = req.params
     const getProducts = await products.doc(reqParams.productName).get()
@@ -41,7 +41,7 @@ app.get('/register/:productName/:productPrice/:productAmount', async (req: Reque
   }
 })
 
-app.get('/update/:productName/:productPrice/:productAmount', async (req: Request, res: Response) => {
+app.put('/update/:productName/:productPrice/:productAmount', async (req: Request, res: Response) => {
   try {
     const reqParams = req.params
     const getProducts = await products.doc(reqParams.productName).get()
