@@ -15,14 +15,12 @@ app.get('/', (req: Request, res: Response) => {
 
 app.get('/get/:productName', async (req: Request, res: Response) => {
   const reqParams = req.params
-  const getProducts = await products.doc(reqParams.productName).get().then((e) => {
-    if (e.exists) {
-      res.status(200).json(getProducts)
-    } else {
-      res.status(404).json({status: "Not found"})
-    }
-  })
-
+  const getProducts = await products.doc(reqParams.productName).get()
+  if (getProducts.exists) {
+    res.status(200).json(getProducts)
+  } else {
+    res.status(404).json({status: "Not found"})
+  }
 })
 
 app.post('/register/:productName/:productPrice/:productAmount', async (req: Request, res: Response) => {
