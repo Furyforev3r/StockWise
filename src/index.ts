@@ -41,6 +41,22 @@ app.get('/register/:productName/:productPrice/:productAmount', async (req: Reque
   }
 })
 
+app.get('/update/:productName/:productPrice/:productAmount', async (req: Request, res: Response) => {
+  try {
+    const reqParams = req.params
+    const getProducts = await products.doc(reqParams.productName).get()
+    if (getProducts.exists) {
+      products.doc(reqParams.productName).update({ price: Number(reqParams.productPrice), amount: Number(reqParams.productAmount) }).then((e) => {
+        res.status(200).json(e)
+      })
+    } else {
+      res.status(404).json({status: "Not found"})
+    }
+  } catch (error: any) {
+    res.status(400).json(error.message)
+  }
+})
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`)
 })
