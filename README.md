@@ -1,1 +1,1 @@
-# 🗃️ | StockWise
+# 🗃️ | StockWise.
