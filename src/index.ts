@@ -55,6 +55,22 @@ app.put('/update/:productName/:productPrice/:productAmount', async (req: Request
   }
 })
 
+app.delete('/delete/:productName', async (req: Request, res: Response) => {
+  try {
+    const reqParams = req.params
+    const getProducts = await products.doc(reqParams.productName).get()
+    if (getProducts.exists) {
+      products.doc(reqParams.productName).delete().then((e) => {
+        res.status(200).json(e)
+      })
+    } else {
+      res.status(404).json({status: "Not found"})
+    }
+  } catch (error: any) {
+    res.status(400).json(error.message)
+  }
+})
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`)
 })
