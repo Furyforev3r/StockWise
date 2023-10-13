@@ -1,2 +1,2 @@
 # 🗃️ | StockWise.
-A stock management REST API.
+**A stock management REST API.**
