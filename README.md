@@ -3,7 +3,7 @@
 # 📥 Installation
 **Clone the repository:**
 ```bash
-git clone https://github.com/Furyforev3r/Youtube-Forever.git
+git clone https://github.com/Furyforev3r/StockWise.git
 ```
 **Install dependencies:**
 ```bash
