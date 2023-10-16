@@ -12,5 +12,5 @@ npm install
 # 🖥️ How to Run
 **Run the command:**
 ```bash
-npm start
+npm run dev
 ```
