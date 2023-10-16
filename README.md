@@ -7,7 +7,7 @@ git clone https://github.com/Furyforev3r/StockWise.git
 ```
 **Install dependencies:**
 ```bash
-npm run dev
+npm install
 ```
 # 🖥️ How to Run
 **Run the command:**
