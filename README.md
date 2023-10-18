@@ -16,3 +16,6 @@ npm run dev
 ```
 # 🗄️Databases:
 + **🔥 Firebase Firestore.**
+
+[![Database Icon](https://skillicons.dev/icons?i=firebase)](https://skillicons.dev)
+
