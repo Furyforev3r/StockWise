@@ -15,4 +15,4 @@ npm install
 npm run dev
 ```
 # 🗄️Databases:
-+ **Firebase Firestore.**
++ **🔥 Firebase Firestore.**
