@@ -1,5 +1,5 @@
 # 🗃️ | StockWise.
-**AA stock management REST API.**
+**A stock management REST API.**
 # 📥 Installation
 **Clone the repository:**
 ```bash
